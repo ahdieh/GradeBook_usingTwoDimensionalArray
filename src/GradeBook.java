@@ -26,18 +26,24 @@ public class GradeBook {
 				
 				public void outputGrades(){
 					System.out.println("The Grades are:");
+					System.out.printf("%12s"," ");
 					
-					for (int row = 0; row<this._grades.length; row++){
-					for (int col = 0; col<this._grades[row].length; col++){
-						if (row == 0){
-							System.out.printf("%14Test %6d",col);
+				//	for (int row = 0; row<this._grades.length; row++){
+					//for (int col = 0; col<this._grades[row].length; col++){
+				//		if (row == 0){
+							for (int test = 0; test<this._grades[0].length; test++){
+							System.out.printf("%s %d  ","Test",test+1);
 						}
-						if (col == 0){
-							System.out.printf("Student %4d",row);
-						}
-						System.out.printf("%14d", this._grades[row][col]);
-					}
-					}
+							System.out.println("Average");
+				
+				     for (int row = 0; row<this._grades.length; row++){
+				    	 System.out.printf("Student%2d",row+1);
+				     
+				     for (int grade : this._grades[row]){
+				    	  System.out.printf("%8d",grade);
+				    	 }
+				    	 System.out.println();
+				     }
 				}
 				
 				
