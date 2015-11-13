@@ -55,5 +55,32 @@ public class GradeBook {
 
 				}
 				
+				public int getMin(){
+					int lowest = this._grades[0][0];
+					for (int row = 0; row<this._grades.length; row++){
+						 for (int grade : this._grades[row]){
+							if(grade<lowest)
+								lowest = grade;
+						}
+					}
+					 return lowest;
+
+				}
+				
+				public int getAverage(){
+					int total = 0, number = 0;
+					for (int row = 0; row<this._grades.length; row++){
+						for (int col = 0; col<this._grades[row].length; col++){
+						 for (int grade : this._grades[row]){
+							 total+=grade;
+							 number++;
+						 }
+						 
+						}
+					}
+					System.out.println(number);
+					 return total/number;
+
+				}
 
 }
