@@ -14,7 +14,6 @@ public class Program {
 				{76, 72, 84},
 				{87, 93, 73}};
 
-		
 		GradeBook gradeBook = new GradeBook("COMP228-Java program",gradesArray);
 		gradeBook.processGrades();
 		
