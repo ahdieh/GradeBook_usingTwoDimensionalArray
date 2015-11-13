@@ -16,7 +16,10 @@ public class Program {
 
 		
 		GradeBook gradeBook = new GradeBook("COMP228-Java program",gradesArray);
-		gradeBook.outputGrades();
+		gradeBook.processGrades();
+		
+		
+
 	}
 
 }

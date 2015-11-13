@@ -35,10 +35,13 @@ public class GradeBook {
 				
 				     for (int row = 0; row<this._grades.length; row++){
 				    	 System.out.printf("Student%2d",row+1);
-				     
+				    	 
 				     for (int grade : this._grades[row]){
 				    	  System.out.printf("%8d",grade);
-				    	 }
+				     }
+				     double average = getAveragePerStudent(this._grades[row]);
+				    	  System.out.printf("%8.2f",average);
+				    	 
 				    	 System.out.println();
 				     }
 				}
@@ -67,20 +70,44 @@ public class GradeBook {
 
 				}
 				
-				public int getAverage(){
-					int total = 0, number = 0;
-					for (int row = 0; row<this._grades.length; row++){
-						for (int col = 0; col<this._grades[row].length; col++){
-						 for (int grade : this._grades[row]){
+				public double getAveragePerStudent(int gradeStudent[]){
+					double total = 0; 
+					double average = 0;
+						 for (int grade : gradeStudent){
 							 total+=grade;
-							 number++;
 						 }
 						 
+					average = total/gradeStudent.length;
+					return average;
+				}
+				
+				public double getAverage(){
+//					double total = 0, number = 0;
+//					for (int row = 0; row<this._grades.length; row++){
+//						double averagePerStudent = getAveragePerStudent(this._grades[row]);
+//			
+//							 total+=averagePerStudent;
+//							 number++;
+//						 }
+//					double average = (double)(total/number);
+//					 return average;
+//				}
+					
+					double total = 0, number = 0;
+					for (int row = 0; row<this._grades.length; row++){
+						for (int grade : this._grades[row]){
+							total+=grade;
+							 number++;
 						}
 					}
-					System.out.println(number);
-					 return total/number;
+						return total/number;
+					 }
 
+				
+				public void processGrades(){
+					outputGrades();
+					System.out.printf("the hieghest grade is %d.%n", getMax());
+					System.out.printf("the lowest grade is %d.%n", getMin());
+					System.out.printf("the class average is %.2f%n", getAverage());
 				}
-
 }
