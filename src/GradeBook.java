@@ -28,10 +28,7 @@ public class GradeBook {
 					System.out.println("The Grades are:");
 					System.out.printf("%12s"," ");
 					
-				//	for (int row = 0; row<this._grades.length; row++){
-					//for (int col = 0; col<this._grades[row].length; col++){
-				//		if (row == 0){
-							for (int test = 0; test<this._grades[0].length; test++){
+					for (int test = 0; test<this._grades[0].length; test++){
 							System.out.printf("%s %d  ","Test",test+1);
 						}
 							System.out.println("Average");
@@ -46,6 +43,17 @@ public class GradeBook {
 				     }
 				}
 				
+				public int getMax(){
+					int highest = this._grades[0][0];
+					for (int row = 0; row<this._grades.length; row++){
+						 for (int grade : this._grades[row]){
+							if(grade>highest)
+								highest = grade;
+						}
+					}
+					 return highest;
+
+				}
 				
 
 }
