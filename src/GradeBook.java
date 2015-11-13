@@ -105,6 +105,7 @@ public class GradeBook {
 
 				
 				public void processGrades(){
+					
 					outputGrades();
 					System.out.printf("the hieghest grade is %d.%n", getMax());
 					System.out.printf("the lowest grade is %d.%n", getMin());
